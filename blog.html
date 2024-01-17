@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>One Love Central Blog</title>
+    <!-- Bootstrap CSS -->
+    <link href='bootstrap-css.css' rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href='about-styles.css'>
+    <!-- Google Fonts - Bebas Neue -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href='index'>
+            <img src='OneLove-Logo-01-1024x1024.png' alt="One Love Logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href='index'>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='about'>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='support'>Support Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='blog' >Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Blog Content -->
+<div class="container mt-5">
+    <h2>Blog</h2>
+
+    {% for post in posts %}
+        <div class="blog-post">
+            <h3>{{ post.title }}</h3>
+            <p class="text-muted">Published on {{ post.date_posted|date:"F d, Y" }}</p>
+            <p>{{ post.content|truncatewords:50 }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-5">
+    <div class="container text-center">
+        <p>&copy; 2023 One Love Central. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script>
+
+</body>
+</html>
